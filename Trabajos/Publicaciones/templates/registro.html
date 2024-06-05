@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+
+{% block tittle %}Registro{% endblock tittle %}
+
+{% block content %}
+
+<h1>Registrate y encuentra la Pega para ti!!</h1>
+
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <div class="card">
+                <div class="card-body">
+                    <form method="POST">
+                        {% csrf_token %}
+                        <div class="form-group">
+                            <label for="id_username">Nombre de usuario:</label>
+                            {{ form.username }}
+                            <small class="form-text text-muted">Este nombre será único.</small>
+                        </div>
+                        <br>
+                        <div class="form-group">
+                            <label for="id_password1">Contraseña:</label>
+                            {{ form.password1 }}
+                        </div>
+                        <br>
+                        <div class="form-group">
+                            <label for="id_password2">Confirmar contraseña:</label>
+                            {{ form.password2 }}
+                        </div>
+                        <br>
+                        <button type="submit" class="btn btn-primary">Registrarse</button>
+                    </form>
+                </div>
+                <p>¿Ya tienes una cuenta? <a href="/ingresar">Ingresa aquí</a></p>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock content %}

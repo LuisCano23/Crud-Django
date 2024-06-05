@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+
+{% block tittle %}Inicio{% endblock tittle %}
+
+{% block content %}
+
+<h1>Detalles de esta pega: </h1>
+
+<div class="container">
+    <div>
+        <div class="col-md-6">
+            <div class="card">
+                <div class="card-body">
+                    <h2>{{ publicacion.titulo }}</h2>
+                    <p>{{ publicacion.descripcion }}</p>
+                    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Minus, 
+                    temporibus labore eligendi deleniti est, rerum adipisci atque, 
+                    hic explicabo provident laborum debitis quibusdam maxime 
+                    consequuntur eum harum aut laboriosam. Voluptates.
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

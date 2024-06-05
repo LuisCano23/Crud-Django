@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+
+{% block tittle %}Inicio{% endblock tittle %}
+
+{% block content %}
+
+<h1>Aqui hay publicaciones de trabajos:</h1>
+
+<div>
+    <section class="jobs-section">
+        <div class="container">
+            {% for publicacion in publicaciones %}
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="card job-card">
+                        <div class="card-body">
+                            <a href="{% url 'detalle' publicacion.id %}">
+                                <h5 class="card-title">{{ publicacion.titulo }}</h5>
+                            </a>
+                            <p class="card-text">{{ publicacion.descripcion }}</p>
+                            <p>{{ publicacion.fecha }}</p>
+                            <p><span>Publicado por:</span> {{ publicacion.usuario.username }}</p>
+                            <div>
+                                {% if publicacion.usuario == request.user %}
+                                <a href="{% url 'editar' publicacion.id %}">
+                                    <button>
+                                        Editar
+                                    </button>
+                                </a>
+                                {% endif %}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <br>
+            {% endfor %}
+        </div>
+    </section>
+
+{% endblock %}

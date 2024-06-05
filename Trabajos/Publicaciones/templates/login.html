@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+
+{% block tittle %}Inicio{% endblock tittle %}
+
+{% block content %}
+
+<h1>Inicia sesion con tu cuenta:</h1>
+
+{{ error }}
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <div class="card">
+                <div class="card-body">
+                    <form method="POST">
+                        {% csrf_token %}
+                        <div class="form-group">
+                            <label for="id_username">Nombre de usuario:</label>
+                        </div>
+                        {{ form.username }}
+                        <br>
+                        <div class="form-group">
+                            <label for="id_password1">Contraseña:</label>
+                        </div>
+                        {{ form.password }}
+                        <br>
+                        <br>
+                        <button>
+                            Ingresar
+                        </button>
+                    </form>
+                </div>
+                <p>¿Aun no tienes cuenta? <a href="/registro">Registrate</a></p>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

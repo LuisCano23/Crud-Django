@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+
+{% block tittle %}Inicio{% endblock tittle %}
+
+{% block content %}
+
+<h1>Edita tu publicacion: </h1>
+
+{{ error }}
+<br>
+<form method="POST">
+    {% csrf_token %}
+    {{ edicion.as_p }}
+    <button>
+        Guardar
+    </button>
+</form>
+
+<form action="{% url 'borrar' publicacion.id %}" method="POST">
+    {% csrf_token %}
+    <button>
+        Borrar Publicacion
+    </button>
+</form>
+
+{% endblock %}

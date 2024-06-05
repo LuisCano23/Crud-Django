@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+
+{% block tittle %}Inicio{% endblock tittle %}
+
+{% block content %}
+
+<h1>Aqui podrás publicar pegas</h1>
+<div>
+    <form method="POST">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button>
+            Publicar
+        </button>
+
+    </form>
+</div>
+
+{% endblock %}

@@ -1,0 +1,30 @@
+.navbar-custom {
+    background-color: #343a40;
+  }
+  .navbar-custom .navbar-brand,
+  .navbar-custom .nav-link {
+    color: #ffffff;
+  }
+  .navbar-custom .nav-link:hover {
+    color: #d4d4d4;
+  }
+  .nav-item.dropdown .dropdown-menu {
+    background-color: #343a40;
+  }
+  .dropdown-item {
+    color: #ffffff;
+  }
+  .dropdown-item:hover {
+    background-color: #495057;
+  }
+  .form-control:focus {
+    box-shadow: none;
+  }
+
+body{
+    background-size: cover;
+    background-position: center; 
+    background-repeat: no-repeat; 
+    height: 1080px;
+    width: 1920px;
+}
